@@ -26,9 +26,20 @@ class ViewController: UIViewController {
             } else if numberFromUser < a {
                 mainMessageLabel.text = "Too little"
             } else {
-                mainMessageLabel.text = "Victory"
+                showVictoryAlert()
             }
         }
+    }
+    
+    func showVictoryAlert() {
+        let victoryAlert = UIAlertController(title: "Great victory!", message: "Сongratulations", preferredStyle: .alert)
+        let playAgainAlertAction = UIAlertAction(title: "Start over", style: .default) { action in
+            print(action)
+            self.mainMessageLabel.text = "Welcome"
+            self.a = nil
+        }
+        victoryAlert.addAction(playAgainAlertAction)
+        self.present(victoryAlert, animated: true, completion: nil)
     }
     
 }
