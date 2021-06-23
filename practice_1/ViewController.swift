@@ -34,7 +34,6 @@ class ViewController: UIViewController {
     func showVictoryAlert() {
         let victoryAlert = UIAlertController(title: "Great victory!", message: "Сongratulations", preferredStyle: .alert)
         let playAgainAlertAction = UIAlertAction(title: "Start over", style: .default) { action in
-            print(action)
             self.mainMessageLabel.text = "Welcome"
             self.a = nil
         }
@@ -47,6 +46,6 @@ class ViewController: UIViewController {
 
 class RandomNumber {
     static func getRandomNumber(_ startOfRange: Int, _ endOfRange: Int) -> Int {
-        100
+        Int.random(in: startOfRange...endOfRange)
     }
 }
