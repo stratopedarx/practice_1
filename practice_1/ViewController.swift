@@ -1,15 +1,23 @@
 import UIKit
 
 
-enum Message: String {
-    case welcome = "Hello, friend. My name is Bob iOS. I’m thinking of a number 0-100. Can you guess it?"
-    case welcomeAfterSuccessGame = "Enjoyed? Then come on one more time! Number 0-100. Guess it?"
-    case wrongInput = "Wrong input. Please, try again"
-    case tooMuch = "Too much. Try again"
-    case tooLittle = "Too little. Try again"
-    case victoryTitle = "Great victory!"
-    case victoryMessage = "Сongratulations"
-    case startOver = "Start over"
+// the structure stores different keys for localization
+struct Message {
+    static var welcome = "welcome"
+    static var welcomeAfterSuccessGame = "welcome_after_success_game"
+    static var wrongInput = "wrong_input"
+    static var tooMuch = "too_much"
+    static var tooLittle = "too_little"
+    static var victoryTitle = "victory_title"
+    static var victoryMessage = "victory_message"
+    static var startOver = "start_over"
+}
+
+
+extension String {
+    func localized() -> String {
+        NSLocalizedString(self, comment: "")
+    }
 }
 
 
@@ -22,7 +30,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainMessageLabel.text = Message.welcome.rawValue
+        mainMessageLabel.text = Message.welcome.localized()
     }
     
     @IBAction func getNumberFromUserAction(_ sender: UIButton) {
@@ -31,21 +39,23 @@ class ViewController: UIViewController {
                 computerNumber = RandomNumber.getRandomNumber(startOfRange, endOfRange)
             }
             if numberFromUser > computerNumber {
-                mainMessageLabel.text = Message.tooMuch.rawValue
+                mainMessageLabel.text = Message.tooMuch.localized()
             } else if numberFromUser < computerNumber {
-                mainMessageLabel.text = Message.tooLittle.rawValue
+                mainMessageLabel.text = Message.tooLittle.localized()
             } else {
                 showVictoryAlert()
             }
         } else {
-            mainMessageLabel.text = Message.wrongInput.rawValue
+            mainMessageLabel.text = Message.wrongInput.localized()
         }
     }
     
     func showVictoryAlert() {
-        let victoryAlert = UIAlertController(title: Message.victoryTitle.rawValue, message: Message.victoryMessage.rawValue, preferredStyle: .alert)
-        let playAgainAlertAction = UIAlertAction(title: Message.startOver.rawValue, style: .default) { action in
-            self.mainMessageLabel.text = Message.welcomeAfterSuccessGame.rawValue
+        let victoryAlert = UIAlertController(title: Message.victoryTitle.localized(),
+                                             message: Message.victoryMessage.localized(),
+                                             preferredStyle: .alert)
+        let playAgainAlertAction = UIAlertAction(title: Message.startOver.localized(), style: .default) { action in
+            self.mainMessageLabel.text = Message.welcomeAfterSuccessGame.localized()
             self.computerNumber = nil
         }
         victoryAlert.addAction(playAgainAlertAction)
