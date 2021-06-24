@@ -1,27 +1,6 @@
 import UIKit
 
 
-// the structure stores different keys for localization
-struct Message {
-    static var welcome = "welcome"
-    static var welcomeAfterSuccessGame = "welcome_after_success_game"
-    static var wrongInput = "wrong_input"
-    static var tooMuch = "too_much"
-    static var tooLittle = "too_little"
-    static var victoryTitle = "victory_title"
-    static var victoryMessage = "victory_message"
-    static var startOver = "start_over"
-    static var steps = "steps"
-}
-
-
-extension String {
-    func localized() -> String {
-        NSLocalizedString(self, comment: "")
-    }
-}
-
-
 class ViewController: UIViewController {
     var computerNumber: Int!
     var startOfRange = 0
@@ -71,12 +50,5 @@ class ViewController: UIViewController {
         victoryAlert.addAction(playAgainAlertAction)
         self.present(victoryAlert, animated: true, completion: nil)
     }
-    
 }
-    
 
-class RandomNumber {
-    static func getRandomNumber(_ startOfRange: Int, _ endOfRange: Int) -> Int {
-        Int.random(in: startOfRange...endOfRange)
-    }
-}
