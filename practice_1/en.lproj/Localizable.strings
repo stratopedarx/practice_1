@@ -15,3 +15,9 @@
 "victory_message" = "Сongratulations";
 "start_over" = "Start over";
 "steps" = "Number os steps";
+
+"start_range" = "Start of range";
+"end_range" = "End of range";
+"apply" = "apply";
+"ok" = "ok";
+"new_settings" = "Saved it. Let's play on";

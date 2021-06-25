@@ -3,8 +3,6 @@ import UIKit
 
 class ViewController: UIViewController {
     var computerNumber: Int!
-    var startOfRange = 0
-    var endOfRange = 100
     var numberOfSteps = 0 {
         didSet {
             stepLabel.text = "\(Message.steps.localized()) : \(numberOfSteps)"
@@ -24,7 +22,7 @@ class ViewController: UIViewController {
         numberOfSteps += 1
         if let numberFromUser = Int(numberFromUserTextField.text!) {
             if computerNumber == nil {
-                computerNumber = RandomNumber.getRandomNumber(startOfRange, endOfRange)
+                computerNumber = RandomNumber.getRandomNumber(globalSettings.startOfRange, globalSettings.endOfRange)
             }
             if numberFromUser > computerNumber {
                 mainMessageLabel.text = Message.tooMuch.localized()
@@ -47,8 +45,7 @@ class ViewController: UIViewController {
             self.computerNumber = nil
             self.numberOfSteps = 0
         }
-        victoryAlert.addAction(playAgainAlertAction)
-        self.present(victoryAlert, animated: true, completion: nil)
+        sendAlert(self, victoryAlert, playAgainAlertAction)
     }
 }
 
