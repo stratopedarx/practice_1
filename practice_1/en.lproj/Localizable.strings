@@ -6,8 +6,8 @@
   
 */
 
-"welcome" = "Hello, friend. My name is Bob iOS. I’m thinking of a number 0-100. Can you guess it?";
-"welcome_after_success_game" = "Enjoyed? Then come on one more time! Number 0-100. Guess it?";
+"welcome" = "Hello, friend. My name is Bob iOS. I’m thinking of a number. Can you guess it?";
+"welcome_after_success_game" = "Enjoyed? Then come on one more time! Guess it?";
 "wrong_input" = "Wrong input. Please, try again";
 "too_much" = "Too much. Try again";
 "too_little" = "Too little. Try again";
@@ -15,6 +15,7 @@
 "victory_message" = "Сongratulations";
 "start_over" = "Start over";
 "steps" = "Number os steps";
+"range" = "range of numbers";
 
 "start_range" = "Start of range";
 "end_range" = "End of range";

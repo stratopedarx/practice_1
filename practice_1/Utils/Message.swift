@@ -12,6 +12,7 @@ struct Message {
     static var victoryMessage = "victory_message"
     static var startOver = "start_over"
     static var steps = "steps"
+    static var range = "range"
     // for SettingsViewController
     static var startOfRange = "start_range"
     static var endOfRange = "end_range"

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFx-xi-lNe">
-                                <rect key="frame" x="20" y="133" width="374" height="107"/>
+                                <rect key="frame" x="20" y="101" width="374" height="107"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="27"/>
                                 <nil key="textColor"/>
@@ -49,6 +49,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRt-J9-XBO">
+                                <rect key="frame" x="67" y="224" width="280" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -64,6 +71,7 @@
                     <connections>
                         <outlet property="mainMessageLabel" destination="NFx-xi-lNe" id="wGv-kD-fQI"/>
                         <outlet property="numberFromUserTextField" destination="Mfe-yY-MNr" id="fDV-uz-Lev"/>
+                        <outlet property="rangeLabel" destination="RRt-J9-XBO" id="dwR-B5-Kc9"/>
                         <outlet property="stepLabel" destination="v9Y-dU-Qcx" id="ei7-WO-yn0"/>
                     </connections>
                 </viewController>

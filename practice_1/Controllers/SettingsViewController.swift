@@ -32,6 +32,9 @@ class SettingsViewController: UIViewController {
             let successAlert = UIAlertController(title: Message.newSettings.localized(), message: "😀", preferredStyle: .alert)
             let successAlertAction = UIAlertAction(title: Message.ok.localized(), style: .default)
             sendAlert(self, successAlert, successAlertAction)
+            // TODO: how to get instance of ViewContoller to change range?
+            //let instantVC = storyboard?.instantiateViewController(identifier: "ViewController") as! ViewController
+            //instantVC.range = (globalSettings.startOfRange, globalSettings.endOfRange)
         } else {
             let errorAlert = UIAlertController(title: Message.wrongInput.localized(), message: "😕", preferredStyle: .alert)
             let errorAlertAction = UIAlertAction(title: Message.ok.localized(), style: .default)

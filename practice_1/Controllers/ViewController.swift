@@ -8,18 +8,26 @@ class ViewController: UIViewController {
             stepLabel.text = "\(Message.steps.localized()) : \(numberOfSteps)"
         }
     }
+    var range: (Int, Int) = (globalSettings.startOfRange, globalSettings.endOfRange) {
+        didSet {
+            rangeLabel.text = "\(Message.range.localized()): \(range.0)-\(range.1)"
+        }
+    }
     
     @IBOutlet weak var mainMessageLabel: UILabel!
+    @IBOutlet weak var rangeLabel: UILabel!
     @IBOutlet weak var numberFromUserTextField: UITextField!
     @IBOutlet weak var stepLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mainMessageLabel.text = Message.welcome.localized()
+        range = (globalSettings.startOfRange, globalSettings.endOfRange)
     }
-    
+
     @IBAction func getNumberFromUserAction(_ sender: UIButton) {
         numberOfSteps += 1
+        range = (globalSettings.startOfRange, globalSettings.endOfRange)  // TODO: delete later
         if let numberFromUser = Int(numberFromUserTextField.text!) {
             if computerNumber == nil {
                 computerNumber = RandomNumber.getRandomNumber(globalSettings.startOfRange, globalSettings.endOfRange)
