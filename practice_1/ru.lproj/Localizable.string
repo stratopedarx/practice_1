@@ -1,0 +1,9 @@
+/* 
+  Localizable.string.strings
+  practice_1
+
+  Created by user199993 on 6/24/21.
+  
+*/
+
+"welcome" = "Привет, друг. Моё имя Боб iOS. Я загадал число от 0 до 100. Сможешь угадать?"
